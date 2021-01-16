@@ -26,6 +26,10 @@ namespace AspNetCoreWebApplication
         {
             services.AddRazorPages();
             services.AddTransient<ToDoService>();
+
+
+            services.AddRazorPages()
+        .AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +38,7 @@ namespace AspNetCoreWebApplication
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
