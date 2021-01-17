@@ -56,6 +56,11 @@ namespace AspNetCoreWebApplication
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapControllerRoute(name: "todo",
+                //    pattern: "{controller=ToDo}/{action=Category}/{category}");
+
+                endpoints.MapControllerRoute(name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
